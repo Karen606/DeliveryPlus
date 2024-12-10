@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OrdersViewController" customModule="DeliveryPlus" customModuleProvider="target">
+            <connections>
+                <outlet property="ordersTableView" destination="WXK-OX-6TG" id="WPm-Uh-X3B"/>
+                <outlet property="searchTextField" destination="nJn-vn-okm" id="IjV-dX-KVK"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outletCollection property="filterButtons" destination="Gin-ZT-W4R" collectionClass="NSMutableArray" id="EwC-Ap-Ui7"/>
+                <outletCollection property="filterButtons" destination="2ZP-OH-nIp" collectionClass="NSMutableArray" id="2GC-JV-rej"/>
+                <outletCollection property="filterButtons" destination="iqE-hG-soA" collectionClass="NSMutableArray" id="KCf-6S-Tr6"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nJn-vn-okm" customClass="PaddingTextField" customModule="DeliveryPlus" customModuleProvider="target">
+                    <rect key="frame" x="30" y="59" width="333" height="36"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="36" id="mRx-Mc-vHH"/>
+                    </constraints>
+                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </textField>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="p2W-8M-9lC">
+                    <rect key="frame" x="30" y="139" width="333" height="37"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gin-ZT-W4R" customClass="TabButton" customModule="DeliveryPlus" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="70" height="37"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="37" id="LOa-gx-Me1"/>
+                                <constraint firstAttribute="width" constant="70" id="pt7-v4-Sgy"/>
+                            </constraints>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title="All">
+                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="selectFilter:" destination="-1" eventType="touchUpInside" id="xlJ-Yf-e0Z"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ZP-OH-nIp" customClass="TabButton" customModule="DeliveryPlus" customModuleProvider="target">
+                            <rect key="frame" x="83.666666666666686" y="0.0" width="98" height="37"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="98" id="9Ig-es-dqM"/>
+                                <constraint firstAttribute="height" constant="37" id="aM8-FO-u1T"/>
+                            </constraints>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title="Active">
+                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="selectFilter:" destination="-1" eventType="touchUpInside" id="Bru-YF-PHf"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iqE-hG-soA" customClass="TabButton" customModule="DeliveryPlus" customModuleProvider="target">
+                            <rect key="frame" x="195" y="0.0" width="138" height="37"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="37" id="dPa-fD-RH2"/>
+                                <constraint firstAttribute="width" constant="138" id="fDg-yP-ojB"/>
+                            </constraints>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title="Completed">
+                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="selectFilter:" destination="-1" eventType="touchUpInside" id="Psv-fM-yIN"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                </stackView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sTC-6k-44E">
+                    <rect key="frame" x="112.66666666666669" y="202" width="168" height="22"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="168" id="lrT-Ra-CFb"/>
+                    </constraints>
+                    <inset key="titleEdgeInsets" minX="8" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="Create an order" image="plusIcon">
+                        <color key="titleColor" name="baseGreen"/>
+                    </state>
+                    <connections>
+                        <action selector="clickedCreate:" destination="-1" eventType="touchUpInside" id="qzO-rV-MLI"/>
+                    </connections>
+                </button>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="WXK-OX-6TG">
+                    <rect key="frame" x="0.0" y="244" width="393" height="574"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </tableView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" name="background"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="WXK-OX-6TG" secondAttribute="trailing" id="6h5-zb-hzw"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="p2W-8M-9lC" secondAttribute="trailing" constant="30" id="87V-Zk-Nh5"/>
+                <constraint firstItem="p2W-8M-9lC" firstAttribute="top" secondItem="nJn-vn-okm" secondAttribute="bottom" constant="44" id="G5M-Vj-AIM"/>
+                <constraint firstItem="WXK-OX-6TG" firstAttribute="top" secondItem="sTC-6k-44E" secondAttribute="bottom" constant="20" id="MGF-2q-Hz5"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="WXK-OX-6TG" secondAttribute="bottom" id="Vu3-IS-FGz"/>
+                <constraint firstItem="nJn-vn-okm" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="WRF-tO-hV2"/>
+                <constraint firstItem="WXK-OX-6TG" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="avZ-h7-8wh"/>
+                <constraint firstItem="sTC-6k-44E" firstAttribute="top" secondItem="p2W-8M-9lC" secondAttribute="bottom" constant="26" id="dtY-Q2-o5y"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="nJn-vn-okm" secondAttribute="trailing" constant="30" id="lbR-QQ-Gz8"/>
+                <constraint firstItem="nJn-vn-okm" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="rEX-Mc-vSa"/>
+                <constraint firstItem="p2W-8M-9lC" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="rLk-o0-c3n"/>
+                <constraint firstItem="sTC-6k-44E" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="uBN-IF-257"/>
+            </constraints>
+            <point key="canvasLocation" x="136.64122137404578" y="19.718309859154932"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="plusIcon" width="16" height="16"/>
+        <namedColor name="background">
+            <color red="0.85098039215686272" green="0.8784313725490196" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="baseGreen">
+            <color red="0.21568627450980393" green="0.57647058823529407" blue="0.031372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
