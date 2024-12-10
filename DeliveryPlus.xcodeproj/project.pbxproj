@@ -42,9 +42,14 @@
 		6B2500FD2D0867CD004B50C1 /* OrderFormViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B2500FC2D0867CD004B50C1 /* OrderFormViewController.xib */; };
 		6B2500FE2D0867CD004B50C1 /* OrderFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2500FB2D0867CD004B50C1 /* OrderFormViewController.swift */; };
 		6B2501012D087542004B50C1 /* OrdersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2501002D087542004B50C1 /* OrdersViewModel.swift */; };
+		6B2501062D08C1F8004B50C1 /* OrderDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B2501052D08C1F8004B50C1 /* OrderDetailsViewController.xib */; };
+		6B2501072D08C1F8004B50C1 /* OrderDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2501042D08C1F8004B50C1 /* OrderDetailsViewController.swift */; };
+		6B25010A2D08C628004B50C1 /* OrderDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2501092D08C628004B50C1 /* OrderDetailsViewModel.swift */; };
+		7F8FE5397AC44C5BBB2704FE /* Pods_DeliveryPlus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20D0C601880FDF3A54E8A623 /* Pods_DeliveryPlus.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		20D0C601880FDF3A54E8A623 /* Pods_DeliveryPlus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DeliveryPlus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B2500842D084DAF004B50C1 /* DeliveryPlus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeliveryPlus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B25009F2D084DB5004B50C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6B2500A02D084DB5004B50C1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -82,6 +87,11 @@
 		6B2500FB2D0867CD004B50C1 /* OrderFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderFormViewController.swift; sourceTree = "<group>"; };
 		6B2500FC2D0867CD004B50C1 /* OrderFormViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderFormViewController.xib; sourceTree = "<group>"; };
 		6B2501002D087542004B50C1 /* OrdersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersViewModel.swift; sourceTree = "<group>"; };
+		6B2501042D08C1F8004B50C1 /* OrderDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailsViewController.swift; sourceTree = "<group>"; };
+		6B2501052D08C1F8004B50C1 /* OrderDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderDetailsViewController.xib; sourceTree = "<group>"; };
+		6B2501092D08C628004B50C1 /* OrderDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailsViewModel.swift; sourceTree = "<group>"; };
+		8521891EAF6842B23754EEED /* Pods-DeliveryPlus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeliveryPlus.debug.xcconfig"; path = "Target Support Files/Pods-DeliveryPlus/Pods-DeliveryPlus.debug.xcconfig"; sourceTree = "<group>"; };
+		C9944E58932121FF12FAA8FE /* Pods-DeliveryPlus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeliveryPlus.release.xcconfig"; path = "Target Support Files/Pods-DeliveryPlus/Pods-DeliveryPlus.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,17 +99,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F8FE5397AC44C5BBB2704FE /* Pods_DeliveryPlus.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		41F9B8690F3CAE14F7C7E4EF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8521891EAF6842B23754EEED /* Pods-DeliveryPlus.debug.xcconfig */,
+				C9944E58932121FF12FAA8FE /* Pods-DeliveryPlus.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		6B25007B2D084DAF004B50C1 = {
 			isa = PBXGroup;
 			children = (
 				6B2500A92D084DB5004B50C1 /* DeliveryPlus */,
 				6B2500852D084DAF004B50C1 /* Products */,
+				41F9B8690F3CAE14F7C7E4EF /* Pods */,
+				74F6001AACF7131593FD0E3E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -114,6 +136,7 @@
 		6B2500A92D084DB5004B50C1 /* DeliveryPlus */ = {
 			isa = PBXGroup;
 			children = (
+				6B2501022D08C1D3004B50C1 /* OrderDetails */,
 				6B2500F62D086743004B50C1 /* OrderForm */,
 				6B2500B42D084E65004B50C1 /* Orders */,
 				6B2500B32D084DE5004B50C1 /* Root */,
@@ -250,6 +273,40 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		6B2501022D08C1D3004B50C1 /* OrderDetails */ = {
+			isa = PBXGroup;
+			children = (
+				6B2501082D08C61A004B50C1 /* ViewModel */,
+				6B2501032D08C1EA004B50C1 /* View */,
+			);
+			path = OrderDetails;
+			sourceTree = "<group>";
+		};
+		6B2501032D08C1EA004B50C1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6B2501042D08C1F8004B50C1 /* OrderDetailsViewController.swift */,
+				6B2501052D08C1F8004B50C1 /* OrderDetailsViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6B2501082D08C61A004B50C1 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				6B2501092D08C628004B50C1 /* OrderDetailsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		74F6001AACF7131593FD0E3E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				20D0C601880FDF3A54E8A623 /* Pods_DeliveryPlus.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -257,17 +314,17 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6B25009A2D084DB1004B50C1 /* Build configuration list for PBXNativeTarget "DeliveryPlus" */;
 			buildPhases = (
+				721957A8CD5F926B9C2DE183 /* [CP] Check Pods Manifest.lock */,
 				6B2500802D084DAF004B50C1 /* Sources */,
 				6B2500812D084DAF004B50C1 /* Frameworks */,
 				6B2500822D084DAF004B50C1 /* Resources */,
+				B8327EF45FF1EB93D386B240 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = DeliveryPlus;
-			packageProductDependencies = (
-			);
 			productName = DeliveryPlus;
 			productReference = 6B2500842D084DAF004B50C1 /* DeliveryPlus.app */;
 			productType = "com.apple.product-type.application";
@@ -311,6 +368,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B2501062D08C1F8004B50C1 /* OrderDetailsViewController.xib in Resources */,
 				6B2500E82D0851E6004B50C1 /* OrdersViewController.xib in Resources */,
 				6B2500FD2D0867CD004B50C1 /* OrderFormViewController.xib in Resources */,
 				6B2500AF2D084DB5004B50C1 /* Assets.xcassets in Resources */,
@@ -325,6 +383,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		721957A8CD5F926B9C2DE183 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DeliveryPlus-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B8327EF45FF1EB93D386B240 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DeliveryPlus/Pods-DeliveryPlus-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DeliveryPlus/Pods-DeliveryPlus-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DeliveryPlus/Pods-DeliveryPlus-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		6B2500802D084DAF004B50C1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -338,9 +438,11 @@
 				6B2500D42D084F79004B50C1 /* Font.swift in Sources */,
 				6B2500D52D084F79004B50C1 /* BaseButton.swift in Sources */,
 				6B2500D62D084F79004B50C1 /* PriceTextField.swift in Sources */,
+				6B25010A2D08C628004B50C1 /* OrderDetailsViewModel.swift in Sources */,
 				6B2500F52D0864A3004B50C1 /* CoreDataManager.swift in Sources */,
 				6B2500D72D084F79004B50C1 /* FilterButton.swift in Sources */,
 				6B2500D82D084F79004B50C1 /* String.swift in Sources */,
+				6B2501072D08C1F8004B50C1 /* OrderDetailsViewController.swift in Sources */,
 				6B2500D92D084F79004B50C1 /* PaddingTextView.swift in Sources */,
 				6B2500FE2D0867CD004B50C1 /* OrderFormViewController.swift in Sources */,
 				6B2500DA2D084F79004B50C1 /* InfoPresentationController.swift in Sources */,
@@ -383,6 +485,7 @@
 /* Begin XCBuildConfiguration section */
 		6B25009B2D084DB1004B50C1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8521891EAF6842B23754EEED /* Pods-DeliveryPlus.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -415,6 +518,7 @@
 		};
 		6B25009C2D084DB1004B50C1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C9944E58932121FF12FAA8FE /* Pods-DeliveryPlus.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -482,7 +586,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -545,7 +649,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;

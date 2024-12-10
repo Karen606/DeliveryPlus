@@ -43,7 +43,7 @@ class OrdersViewModel {
             case 1:
                 matchesType = (1...2).contains(order.status)
             case 2:
-                matchesType = order.status == 2
+                matchesType = order.status == 3
             default:
                 break
             }

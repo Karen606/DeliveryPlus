@@ -87,6 +87,18 @@ extension OrdersViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         23
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let orderDetails = OrderDetailsViewController(nibName: "OrderDetailsViewController", bundle: nil)
+        OrderDetailsViewModel.shared.order = viewModel.orders[indexPath.section]
+        orderDetails.completion = { [weak self] in
+            if let self = self {
+                self.viewModel.fetchData()
+            }
+        }
+        orderDetails.modalPresentationStyle = .overFullScreen
+        self.present(orderDetails, animated: false)
+    }
 }
 
 extension OrdersViewController: UITextFieldDelegate {

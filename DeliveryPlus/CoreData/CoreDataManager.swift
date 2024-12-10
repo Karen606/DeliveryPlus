@@ -101,6 +101,32 @@ class CoreDataManager {
             return "#0001"
         }
     
+    func changeOrderStatus(orderId: UUID, newStatus: Int, completion: @escaping (Error?) -> Void) {
+           let backgroundContext = persistentContainer.newBackgroundContext()
+           backgroundContext.perform {
+               let fetchRequest: NSFetchRequest<Order> = Order.fetchRequest()
+               fetchRequest.predicate = NSPredicate(format: "id == %@", orderId as CVarArg)
+               
+               do {
+                   if let order = try backgroundContext.fetch(fetchRequest).first {
+                       order.status = Int32(newStatus)
+                       try backgroundContext.save()
+                       DispatchQueue.main.async {
+                           completion(nil)
+                       }
+                   } else {
+                       DispatchQueue.main.async {
+                           completion(NSError(domain: "", code: 404, userInfo: [NSLocalizedDescriptionKey: "Order not found"]))
+                       }
+                   }
+               } catch {
+                   DispatchQueue.main.async {
+                       completion(error)
+                   }
+               }
+           }
+       }
+    
 //    func removeProduct(by id: UUID, completion: @escaping (Error?) -> Void) {
 //        let backgroundContext = persistentContainer.newBackgroundContext()
 //        backgroundContext.perform {
