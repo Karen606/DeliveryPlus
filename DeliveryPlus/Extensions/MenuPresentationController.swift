@@ -6,7 +6,7 @@
 //
 import UIKit
 
-class InfoPresentationController: UIPresentationController {
+class MenuPresentationController: UIPresentationController {
     var dimmingView: UIView!
 
       override var frameOfPresentedViewInContainerView: CGRect {
@@ -61,8 +61,8 @@ class InfoPresentationController: UIPresentationController {
     
 }
 
-class InfoTransitioningDelegate: NSObject, UIViewControllerTransitioningDelegate {
+class MenuTransitioningDelegate: NSObject, UIViewControllerTransitioningDelegate {
     func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
-        return InfoPresentationController(presentedViewController: presented, presenting: presenting)
+        return MenuPresentationController(presentedViewController: presented, presenting: presenting)
     }
 }

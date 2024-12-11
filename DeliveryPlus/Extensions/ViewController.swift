@@ -21,7 +21,7 @@ extension UIViewController {
     
     func setNavigationBackButton() {
         let backButton = UIButton(type: .custom)
-//        backButton.setImage(.backIcon, for: .normal)
+        backButton.setImage(.backIcon, for: .normal)
         backButton.addTarget(self, action: #selector(clickedBack), for: .touchUpInside)
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: backButton)
     }
@@ -29,7 +29,7 @@ extension UIViewController {
     func setNavigationMenuButton() {
         let menuButton = UIButton(type: .custom)
         menuButton.setImage(.menuIcon, for: .normal)
-//        menuButton.addTarget(self, action: #selector(clickedMenu), for: .touchUpInside)
+        menuButton.addTarget(self, action: #selector(clickedMenu), for: .touchUpInside)
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: menuButton)
     }
     
@@ -41,48 +41,23 @@ extension UIViewController {
         self.view.endEditing(true)
     }
     
-//    @objc func clickedMenu() {
-//        let transitingDelegate = InfoTransitioningDelegate()
-//        let menuViewController = MenuViewController(nibName: "MenuViewController", bundle: nil)
-//        menuViewController.modalPresentationStyle = .custom
-//        menuViewController.transitioningDelegate = transitingDelegate
-//        var tab = 1
-//        switch self {
-//        case is RestaurantMenuViewController:
-//            tab = 0
-//        case is ProductFormViewController:
-//            tab = 1
-//        case is EmployeesViewController:
-//            tab = 2
-//        case is EventsViewController:
-//            tab = 3
-//        default:
-//            tab = 1
-//        }
-//        menuViewController.selectedTab = tab
-//        menuViewController.completion = { [weak self] index in
-//            guard let self = self else { return }
-//            switch index {
-//            case 0:
-//                if !(self is RestaurantMenuViewController) {
-//                    self.navigationController?.viewControllers = [RestaurantMenuViewController(nibName: "RestaurantMenuViewController", bundle: nil)]
-//                }
-//            case 1:
-//                self.pushViewController(ProductFormViewController.self)
-//            case 2:
-//                if !(self is EmployeesViewController) {
-//                    self.navigationController?.viewControllers = [EmployeesViewController(nibName: "EmployeesViewController", bundle: nil)]
-//                }
-//            case 3:
-//                if !(self is EventsViewController) {
-//                    self.navigationController?.viewControllers = [EventsViewController(nibName: "EventsViewController", bundle: nil)]
-//                }
-//            default:
-//                break
-//            }
-//        }
-//        present(menuViewController, animated: false)
-//    }
+    @objc func clickedMenu() {
+        let transitingDelegate = MenuTransitioningDelegate()
+        let menuViewController = MenuViewController(nibName: "MenuViewController", bundle: nil)
+        menuViewController.modalPresentationStyle = .custom
+        menuViewController.transitioningDelegate = transitingDelegate
+
+        
+        menuViewController.completion = { [weak self] index in
+            guard let self = self else { return }
+            if index == 0 {
+                self.pushViewController(OrderFormViewController.self)
+            } else if index == 1 {
+                self.pushViewController(TrackingViewController.self)
+            }
+        }
+        present(menuViewController, animated: false)
+    }
     
     func pushViewController<T: UIViewController>(_ viewControllerType: T.Type, animated: Bool = true) {
         let nibName = String(describing: viewControllerType)
