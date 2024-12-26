@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import MessageUI
 
 extension UIViewController {
     
@@ -50,10 +51,45 @@ extension UIViewController {
         
         menuViewController.completion = { [weak self] index in
             guard let self = self else { return }
-            if index == 0 {
+            switch index {
+            case 0:
                 self.pushViewController(OrderFormViewController.self)
-            } else if index == 1 {
+            case 1:
                 self.pushViewController(TrackingViewController.self)
+            case 2:
+                if MFMailComposeViewController.canSendMail() {
+                    let mailComposeVC = MFMailComposeViewController()
+                    mailComposeVC.mailComposeDelegate = self
+                    mailComposeVC.setToRecipients(["kirill.fedorov.2000@icloud.com"])
+                    present(mailComposeVC, animated: true, completion: nil)
+                } else {
+                    let alert = UIAlertController(
+                        title: "Mail Not Available",
+                        message: "Please configure a Mail account in your settings.",
+                        preferredStyle: .alert
+                    )
+                    alert.addAction(UIAlertAction(title: "OK", style: .default))
+                    present(alert, animated: true)
+                }
+            case 3:
+                let privacyVC = PrivacyViewController()
+                self.hidesBottomBarWhenPushed = true
+                self.navigationController?.pushViewController(privacyVC, animated: true)
+                self.hidesBottomBarWhenPushed = false
+            case 4:
+                let appID = "6739855462"
+                if let url = URL(string: "https://apps.apple.com/app/id\(appID)?action=write-review") {
+                    if UIApplication.shared.canOpenURL(url) {
+                        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                    } else {
+                        print("Unable to open App Store URL")
+                    }
+                }
+            default:
+                break
+            }
+            if index == 0 {
+            } else if index == 1 {
             }
         }
         present(menuViewController, animated: false)
@@ -78,3 +114,8 @@ extension UIViewController {
     }
 }
 
+extension UIViewController: @retroactive MFMailComposeViewControllerDelegate {
+    public func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true, completion: nil)
+    }
+}
